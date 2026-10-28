@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Study Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <!-- Clean Minimal Header -->
+  <header class="app-header">
+    <div class="brand-group">
+      <div class="brand-icon">✦</div>
+      <div>
+        <h1>Smart Study Assistant</h1>
+        <p class="subtitle">Document Reader, Summarizer &amp; Question Answering</p>
+      </div>
+    </div>
+
+    <div class="header-controls">
+      <button id="toggleParamsBtn" class="btn btn-ghost">Settings</button>
+      <button id="toggleMathBtn" class="btn btn-outline">Algorithm Inspector</button>
+    </div>
+  </header>
+
+  <!-- Streamlined Top Bar -->
+  <section class="toolbar">
+    <div class="toolbar-left">
+      <div class="toolbar-item">
+        <label for="chapterSelect">Study Material</label>
+        <select id="chapterSelect">
+          {% for ch in chapters %}
+          <option value="{{ ch.id }}">{{ ch.title }}</option>
+          {% endfor %}
+          <option value="custom">Custom / Uploaded Document</option>
+        </select>
+      </div>
+
+      <div class="toolbar-item upload-group">
+        <label for="fileUpload" class="btn btn-secondary">
+          Upload File (.txt, .md, .pdf)
+        </label>
+        <input type="file" id="fileUpload" accept=".txt,.md,.pdf" hidden />
+        <button id="toggleEditBtn" class="btn btn-secondary">Paste Text</button>
+        <span id="uploadStatus" class="upload-status"></span>
+      </div>
+    </div>
+
+    <!-- Collapsible Hyperparameter Settings -->
+    <div id="paramsDrawer" class="toolbar-params hidden">
+      <div class="param-box" title="Number of summary sentences">
+        <label for="summaryK">Summary Length</label>
+        <input type="number" id="summaryK" min="1" max="8" value="3" />
+      </div>
+      <div class="param-box" title="PageRank damping factor d">
+        <label for="dampingFactor">Damping (d)</label>
+        <input type="number" id="dampingFactor" min="0.50" max="0.99" step="0.05" value="0.85" />
+      </div>
+      <div class="param-box" title="BM25 term saturation k1">
+        <label for="bm25K1">BM25 k1</label>
+        <input type="number" id="bm25K1" min="0.5" max="3.0" step="0.1" value="1.5" />
+      </div>
+      <div class="param-box" title="BM25 length normalization b">
+        <label for="bm25B">BM25 b</label>
+        <input type="number" id="bm25B" min="0.0" max="1.0" step="0.05" value="0.75" />
+      </div>
+      <button id="analyzeBtn" class="btn btn-primary btn-small">Apply</button>
+    </div>
+  </section>
+
+  <!-- Main Split-Pane Study Workspace -->
+  <main class="workspace-grid">
+    <!-- LEFT PANE: Clean Document Reader -->
+    <section class="pane pane-left">
+      <div class="pane-header">
+        <div>
+          <span class="section-eyebrow">Reading View</span>
+          <h2 id="docTitleHeading">Source Document</h2>
+        </div>
+        <div class="entity-legend">
+          <span class="tag-chip tag-PERSON">Person</span>
+          <span class="tag-chip tag-LOCATION">Location</span>
+          <span class="tag-chip tag-DATE">Date</span>
+          <span class="tag-chip tag-CONCEPT">Concept</span>
+        </div>
+      </div>
+
+      <!-- Editable Raw Textarea (Togglable for custom text entry) -->
+      <div id="rawEditorContainer" class="raw-editor-container hidden">
+        <input type="text" id="customDocTitle" class="title-input" placeholder="Document Title" value="Custom Study Notes" />
+        <textarea id="rawTextInput" rows="7" placeholder="Paste your textbook chapter, article, or lecture notes here..."></textarea>
+        <div class="editor-actions">
+          <button id="applyCustomTextBtn" class="btn btn-primary btn-small">Analyze Text</button>
+          <button id="cancelEditBtn" class="btn btn-ghost btn-small">Cancel</button>
+        </div>
+      </div>
+
+      <!-- Interactive Annotated Sentences View -->
+      <div id="annotatedReader" class="annotated-reader"></div>
+    </section>
+
+    <!-- RIGHT PANE: Top 3-Tab Switcher (Q&A | Summary | Key Takeaways) -->
+    <section class="pane pane-right">
+      <!-- Top Segmented Tab Bar -->
+      <div class="right-tabs-bar" role="tablist">
+        <button class="tab-btn active" data-target="qaCard" role="tab">Q&amp;A</button>
+        <button class="tab-btn" data-target="summaryCard" role="tab">Summary</button>
+        <button class="tab-btn" data-target="flashcardsCard" role="tab">Key Takeaways</button>
+      </div>
+
+      <!-- TAB 1: Q&A (Default Active) -->
+      <div id="qaCard" class="study-card qa-card">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Interactive Q&amp;A</span>
+            <h3>Ask Your Study Material</h3>
+          </div>
+          <span class="subtle-badge">BM25 + Naive Bayes + Lesk</span>
+        </div>
+
+        <!-- Question Input Bar -->
+        <div class="qa-input-row">
+          <input
+            type="text"
+            id="questionInput"
+            placeholder="Ask a question (Who, When, Where, What, How)..."
+          />
+          <button id="askBtn" class="btn btn-primary">Ask</button>
+        </div>
+
+        <!-- Suggested 1-Click Questions -->
+        <div id="questionChips" class="question-chips"></div>
+
+        <!-- Clean Q&A Output Panel -->
+        <div id="qaResultContainer" class="qa-result-container hidden">
+          <div class="qa-answer-banner">
+            <div class="exact-answer-col">
+              <div class="answer-header-row">
+                <span class="eat-label">Answer</span>
+                <span id="qaExpectedType" class="eat-badge">PERSON</span>
+                <span id="qaBm25TopScore" class="score-pill">BM25: 0.00</span>
+              </div>
+              <div id="qaExactAnswer" class="exact-answer-text"></div>
+            </div>
+          </div>
+
+          <div class="qa-details-grid">
+            <div class="qa-section">
+              <div class="qa-section-title">Source Evidence</div>
+              <div id="qaSupportingSentence" class="supporting-quote"></div>
+              <div id="qaTopPassagesList" class="bm25-mini-list"></div>
+            </div>
+
+            <div class="qa-section">
+              <div class="qa-section-title">Contextual Term Definition (Lesk WSD)</div>
+              <div id="qaLeskContainer" class="lesk-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: Summary (Hidden Until Clicked) -->
+      <div id="summaryCard" class="study-card hidden">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Document Overview</span>
+            <h3>Executive Summary</h3>
+          </div>
+          <span class="subtle-badge">TextRank</span>
+        </div>
+        <ul id="summaryList" class="summary-list"></ul>
+      </div>
+
+      <!-- TAB 3: Key Takeaways (Hidden Until Clicked) -->
+      <div id="flashcardsCard" class="study-card hidden">
+        <div class="card-header">
+          <div>
+            <span class="section-eyebrow">Entities &amp; Flashcards</span>
+            <h3>Key Takeaways</h3>
+          </div>
+          <span class="subtle-badge">HMM + Viterbi</span>
+        </div>
+
+        <div id="entityGroupsContainer" class="entity-groups"></div>
+
+        <div class="flashcards-header">
+          <h4>Study Flashcards <span class="muted-inline">(Click a card to flip)</span></h4>
+        </div>
+        <div id="flashcardsGrid" class="flashcards-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Expandable Mathematical & Numerical Inspector Drawer -->
+  <section id="mathInspectorModal" class="math-drawer hidden">
+    <div class="math-drawer-header">
+      <div>
+        <h2>Algorithm &amp; Mathematical Inspector</h2>
+        <p>Step-by-step matrices, probabilities, and scores across all 4 classical NLP algorithms</p>
+      </div>
+      <button id="closeMathBtn" class="btn btn-secondary btn-small">Close ✕</button>
+    </div>
+
+    <div class="math-grid">
+      <div class="math-box">
+        <h3>1. TextRank (Cosine Graph + PageRank Power Iteration)</h3>
+        <div class="formula-block">
+          <code>p^(t+1) = (1 - d)/N + d · M^T · p^(t)</code>
+        </div>
+        <div id="mathTextRankContent" class="math-content"></div>
+      </div>
+
+      <div class="math-box">
+        <h3>2. HMM Transition Matrix &amp; Viterbi Trellis</h3>
+        <div class="formula-block">
+          <code>V[k, t] = max_prev ( V[prev, t-1] + log P(k | prev) ) + log P(w_t | k)</code>
+        </div>
+        <div id="mathHmmContent" class="math-content"></div>
+      </div>
+
+      <div class="math-box">
+        <h3>3. Okapi BM25 Passage Retrieval</h3>
+        <div class="formula-block">
+          <code>BM25(Q, D) = Σ IDF(q) · [ tf · (k1 + 1) / (tf + k1 · (1 - b + b · |D|/avgdl)) ]</code>
+        </div>
+        <div id="mathBm25Content" class="math-content"></div>
+      </div>
+
+      <div class="math-box">
+        <h3>4. Naive Bayes Posteriors &amp; Span Scoring</h3>
+        <div class="formula-block">
+          <code>c* = argmax_c [ log P(c) + Σ log P(f_i | c) ]  |  s* = argmax_s |Context ∩ Signature(s)|</code>
+        </div>
+        <div id="mathQaContent" class="math-content"></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    window.INITIAL_CHAPTERS = {{ chapters | tojson | safe }};
+  </script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

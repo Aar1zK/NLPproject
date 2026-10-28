@@ -1,0 +1,128 @@
+{
+  "cell": [
+    {
+      "sense_id": "cell.n.01 (Biological Unit)",
+      "domain": "Biology & Life Sciences",
+      "definition": "The basic membrane-bound structural, functional, and biological unit of all living organisms, containing cytoplasm, DNA, organelles, and mitochondria.",
+      "example": "Eukaryotic cells contain a nucleus enclosed within a membrane and produce ATP energy.",
+      "keywords": ["biology", "organism", "membrane", "nucleus", "mitochondria", "dna", "cytoplasm", "eukaryotic", "prokaryotic", "hooke", "living", "tissue", "atp", "organelle"]
+    },
+    {
+      "sense_id": "cell.n.02 (Electrochemical Battery)",
+      "domain": "Physics & Electrical Engineering",
+      "definition": "A device capable of generating electrical current and voltage from chemical reactions using electrodes, anode, cathode, and electrolyte.",
+      "example": "A voltaic battery consists of multiple electrochemical cells connected in series.",
+      "keywords": ["battery", "voltage", "electrode", "anode", "cathode", "current", "circuit", "solar", "electricity"]
+    },
+    {
+      "sense_id": "cell.n.03 (Prison / Detention Room)",
+      "domain": "Law & Penology",
+      "definition": "A small room in which a prisoner is locked up inside a prison or jail facility.",
+      "example": "The guard locked the inmate inside the concrete prison cell.",
+      "keywords": ["prison", "jail", "inmate", "prisoner", "guard", "detention", "locked", "sentence"]
+    }
+  ],
+  "network": [
+    {
+      "sense_id": "network.n.01 (Artificial Neural Network)",
+      "domain": "Machine Learning & AI",
+      "definition": "A computational model of interconnected artificial neurons or nodes with weighted connections trained via backpropagation and gradient descent.",
+      "example": "Deep neural networks learn hierarchical representations from training data.",
+      "keywords": ["neural", "neuron", "perceptron", "backpropagation", "weights", "layer", "learning", "intelligence", "ai", "hinton", "rosenblatt", "training", "gradient"]
+    },
+    {
+      "sense_id": "network.n.02 (Computer & Communication Network)",
+      "domain": "Computer Networking & Internet",
+      "definition": "A system of interconnected computers, routers, and hosts exchanging digital data packets using communication protocols like TCP/IP and HTTP.",
+      "example": "ARPANET was the first wide-area packet-switching computer network.",
+      "keywords": ["packet", "router", "protocol", "tcp", "ip", "http", "internet", "arpanet", "host", "bandwidth", "dns", "web", "server", "client"]
+    },
+    {
+      "sense_id": "network.n.03 (Social or Broadcasting Group)",
+      "domain": "Sociology & Media",
+      "definition": "A group of people who exchange professional information and contacts, or a chain of television broadcasting stations.",
+      "example": "She built a strong professional network of colleagues across the industry.",
+      "keywords": ["television", "broadcast", "social", "colleagues", "friends", "station", "media"]
+    }
+  ],
+  "weight": [
+    {
+      "sense_id": "weight.n.01 (Synaptic / Mathematical Parameter)",
+      "domain": "Mathematics & Neural Networks",
+      "definition": "A numerical coefficient or parameter in a mathematical model, graph edge, or neural network that scales the importance of an input feature.",
+      "example": "Backpropagation adjusts the synaptic weights of the neural network to minimize error.",
+      "keywords": ["neural", "parameter", "backpropagation", "gradient", "matrix", "perceptron", "error", "input", "node", "graph", "score"]
+    },
+    {
+      "sense_id": "weight.n.02 (Gravitational Force / Mass)",
+      "domain": "Classical Mechanics",
+      "definition": "The downward force exerted on the mass of a physical object by gravity, measured in newtons or kilograms.",
+      "example": "An astronaut experiences weightlessness in orbital microgravity.",
+      "keywords": ["gravity", "mass", "kilogram", "force", "scale", "heavy", "physical", "pound"]
+    }
+  ],
+  "protocol": [
+    {
+      "sense_id": "protocol.n.01 (Network Communication Standard)",
+      "domain": "Computer Science & Telecommunications",
+      "definition": "A formal set of digital rules and packet formats governing data transmission between devices over a network, such as TCP/IP, HTTP, or DNS.",
+      "example": "The TCP/IP protocol suite guarantees reliable packet delivery over the Internet.",
+      "keywords": ["tcp", "ip", "http", "packet", "internet", "data", "router", "arpanet", "web", "transmission", "address", "host", "cerf"]
+    },
+    {
+      "sense_id": "protocol.n.02 (Diplomatic Etiquette / Treaty)",
+      "domain": "International Relations & Diplomacy",
+      "definition": "The official procedure or system of rules governing affairs of state, diplomatic ceremonies, or an amendment to an international treaty.",
+      "example": "Ambassadors must follow strict diplomatic protocol during state visits.",
+      "keywords": ["diplomat", "treaty", "ambassador", "state", "ceremony", "embassy", "government"]
+    }
+  ],
+  "nucleus": [
+    {
+      "sense_id": "nucleus.n.01 (Eukaryotic Cell Organelle)",
+      "domain": "Cell Biology & Genetics",
+      "definition": "A membrane-enclosed organelle found in eukaryotic cells that houses the organism's genetic DNA chromosomes and regulates gene expression.",
+      "example": "Unlike prokaryotes, eukaryotic cells store their DNA inside a defined nucleus.",
+      "keywords": ["cell", "eukaryotic", "dna", "chromosome", "membrane", "organelle", "genetic", "rna", "mitochondria", "biology"]
+    },
+    {
+      "sense_id": "nucleus.n.02 (Atomic Core of Protons & Neutrons)",
+      "domain": "Nuclear Physics & Chemistry",
+      "definition": "The positively charged dense core of an atom composed of protons and neutrons bound by the strong nuclear force.",
+      "example": "Nuclear fission splits the heavy atomic nucleus of uranium into smaller nuclei.",
+      "keywords": ["atom", "proton", "neutron", "electron", "fission", "fusion", "uranium", "charge", "physics"]
+    }
+  ],
+  "packet": [
+    {
+      "sense_id": "packet.n.01 (Digital Network Data Unit)",
+      "domain": "Computer Networking",
+      "definition": "A formatted unit of digital data routed across a packet-switched computer network containing a header (source/destination IP) and payload.",
+      "example": "Routers forward each packet independently across the network toward its destination IP address.",
+      "keywords": ["network", "router", "ip", "tcp", "switching", "arpanet", "data", "internet", "header", "transmission"]
+    },
+    {
+      "sense_id": "packet.n.02 (Small Paper Envelope or Container)",
+      "domain": "Everyday Objects",
+      "definition": "A small paper or foil pouch containing a measured portion of food, seeds, or powder.",
+      "example": "He opened a packet of sugar for his coffee.",
+      "keywords": ["sugar", "seed", "pouch", "paper", "envelope", "food", "box"]
+    }
+  ],
+  "power": [
+    {
+      "sense_id": "power.n.01 (Mathematical Exponent / Iteration)",
+      "domain": "Mathematics & Algorithms",
+      "definition": "Repeated multiplication or matrix iteration (such as the power method for eigenvectors and PageRank) or statistical explanatory capability.",
+      "example": "The power iteration method converges to the dominant eigenvector of a stochastic matrix.",
+      "keywords": ["matrix", "eigenvector", "iteration", "compute", "algorithm", "mathematical", "model", "machine"]
+    },
+    {
+      "sense_id": "power.n.02 (Biological / Metabolic Energy)",
+      "domain": "Biology & Bioenergetics",
+      "definition": "Metabolic energy capacity supplied to living cells by mitochondria and ATP molecules.",
+      "example": "Mitochondria act as the power plants of the eukaryotic cell by synthesizing ATP.",
+      "keywords": ["mitochondria", "atp", "cell", "energy", "respiration", "metabolic", "glucose"]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ai_history",
+    "title": "Chapter 1: Foundations of Artificial Intelligence & Neural Networks",
+    "category": "Computer Science",
+    "text": "Alan Turing laid the theoretical foundations of modern computer science in 1936 at Cambridge University by introducing the universal Turing machine. During World War II, Alan Turing worked at Bletchley Park in England to break the German Enigma cipher, saving millions of lives. In 1950, Alan Turing published his landmark paper introducing the Turing Test to evaluate whether a machine can exhibit intelligent behavior indistinguishable from a human. The academic field of Artificial Intelligence was officially born in 1956 when John McCarthy organized the summer workshop at Dartmouth College in New Hampshire. In 1958, Frank Rosenblatt developed the Perceptron algorithm at Cornell Aeronautical Laboratory, creating an early artificial neural network capable of learning binary classification weights. However, limitations in single-layer neural networks led to the first AI Winter during the 1970s when research funding declined sharply. In 1986, Geoffrey Hinton and his colleagues popularized the backpropagation algorithm, which uses gradient descent to adjust multi-layer neural network weights and minimize error. Modern machine learning builds upon these classical statistical and connectionist foundations to solve complex pattern recognition tasks.",
+    "preset_questions": [
+      "Who introduced the Turing Test to evaluate machine intelligence?",
+      "Where did Alan Turing work to break the Enigma cipher?",
+      "When did John McCarthy organize the Dartmouth College workshop?",
+      "What is the backpropagation algorithm used for in neural networks?"
+    ]
+  },
+  {
+    "id": "cell_biology",
+    "title": "Chapter 2: Cellular Biology, Organelles & Bioenergetics",
+    "category": "Biology & Life Sciences",
+    "text": "The cell is the fundamental structural and functional unit of all known living organisms. Robert Hooke first discovered biological cells in 1665 in London after examining thin slices of cork through a compound microscope. Living organisms are classified into two primary groups: prokaryotic cells, which lack a membrane-bound nucleus, and eukaryotic cells, which store genetic DNA inside an enclosed nucleus. In 1953, James Watson and Francis Crick described the double-helix molecular structure of DNA at Cambridge University. Inside eukaryotic cells, mitochondria serve as the metabolic power plants that generate adenosine triphosphate (ATP) through aerobic cellular respiration. During aerobic cellular respiration, glucose is oxidized across three stages to yield approximately 36 ATP molecules per glucose molecule. Ribosomes act as molecular machines within the cytoplasm that translate messenger RNA into polypeptide protein chains. Meanwhile, the semi-permeable cell membrane regulates the transport of ions and nutrients to maintain cellular homeostasis.",
+    "preset_questions": [
+      "Who first discovered biological cells using a microscope?",
+      "When did Robert Hooke discover biological cells in London?",
+      "Where is genetic DNA stored inside eukaryotic cells?",
+      "What is the role of mitochondria in a biological cell?"
+    ]
+  },
+  {
+    "id": "internet_networking",
+    "title": "Chapter 3: Computer Networks, Packet Switching & The World Wide Web",
+    "category": "Computer Networking",
+    "text": "Modern global telecommunications rely on packet-switched computer networks that divide digital messages into discrete data packets. In 1969, the United States Department of Defense launched ARPANET, the first operational packet-switching network connecting research universities in California and Utah. In 1974, Vint Cerf and Bob Kahn designed the Transmission Control Protocol and Internet Protocol (TCP/IP) architecture to standardize communication across heterogeneous networks. ARPANET officially adopted the TCP/IP protocol suite on January 1, 1983, marking the birth of the modern Internet. Each packet routed across an IP network carries a digital header containing source and destination IP addresses while the Domain Name System (DNS) translates human-readable domain names into numerical IP addresses. In 1989, British computer scientist Tim Berners-Lee invented the World Wide Web at CERN in Geneva, Switzerland. Tim Berners-Lee also created the Hypertext Transfer Protocol (HTTP) and HTML so researchers could link and retrieve hypertext documents across the Internet.",
+    "preset_questions": [
+      "Who invented the World Wide Web at CERN?",
+      "Where did Tim Berners-Lee invent the World Wide Web?",
+      "When did Vint Cerf and Bob Kahn design the TCP/IP architecture?",
+      "What protocol translates human-readable domain names into IP addresses?"
+    ]
+  }
+]

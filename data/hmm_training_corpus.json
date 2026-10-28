@@ -1,0 +1,90 @@
+[
+  {
+    "tokens": [
+      ["Alan", "PERSON"], ["Turing", "PERSON"], ["published", "OTHER"], ["his", "OTHER"],
+      ["seminal", "OTHER"], ["paper", "OTHER"], ["on", "OTHER"], ["computability", "CONCEPT"],
+      ["in", "OTHER"], ["1936", "DATE"], ["at", "OTHER"], ["Cambridge", "LOCATION"], ["University", "LOCATION"], [".", "OTHER"]
+    ]
+  },
+  {
+    "tokens": [
+      ["During", "OTHER"], ["World", "CONCEPT"], ["War", "CONCEPT"], ["II", "DATE"], [",", "OTHER"],
+      ["Turing", "PERSON"], ["worked", "OTHER"], ["at", "OTHER"], ["Bletchley", "LOCATION"], ["Park", "LOCATION"],
+      ["in", "OTHER"], ["England", "LOCATION"], ["to", "OTHER"], ["decrypt", "OTHER"], ["the", "OTHER"],
+      ["Enigma", "CONCEPT"], ["cipher", "CONCEPT"], [".", "OTHER"]
+    ]
+  },
+  {
+    "tokens": [
+      ["In", "OTHER"], ["1950", "DATE"], [",", "OTHER"], ["Alan", "PERSON"], ["Turing", "PERSON"],
+      ["introduced", "OTHER"], ["the", "OTHER"], ["Turing", "CONCEPT"], ["Test", "CONCEPT"],
+      ["to", "OTHER"], ["evaluate", "OTHER"], ["machine", "CONCEPT"], ["intelligence", "CONCEPT"], [".", "OTHER"]
+    ]
+  },
+  {
+    "tokens": [
+      ["John", "PERSON"], ["McCarthy", "PERSON"], ["coined", "OTHER"], ["the", "OTHER"],
+      ["term", "OTHER"], ["Artificial", "CONCEPT"], ["Intelligence", "CONCEPT"], ["in", "OTHER"],
+      ["1956", "DATE"], ["at", "OTHER"], ["Dartmouth", "LOCATION"], ["College", "LOCATION"], [".", "OTHER"]
+    ]
+  },
+  {
+    "tokens": [
+      ["Frank", "PERSON"], ["Rosenblatt", "PERSON"], ["developed", "OTHER"], ["the", "OTHER"],
+      ["Perceptron", "CONCEPT"], ["algorithm", "CONCEPT"], ["in", "OTHER"], ["1958", "DATE"],
+      ["at", "OTHER"], ["Cornell", "LOCATION"], ["Aeronautical", "LOCATION"], ["Laboratory", "LOCATION"], [".", "OTHER"]
+    ]
+  },
+  {
+    "tokens": [
+      ["Geoffrey", "PERSON"], ["Hinton", "PERSON"], ["popularized", "OTHER"], ["the", "OTHER"],
+      ["backpropagation", "CONCEPT"], ["algorithm", "CONCEPT"], ["for", "OTHER"], ["neural", "CONCEPT"],
+      ["networks", "CONCEPT"], ["in", "OTHER"], ["1986", "DATE"], [".", "OTHER"]
+    ]
+  },
+  {
+    "tokens": [
+      ["Robert", "PERSON"], ["Hooke", "PERSON"], ["first", "OTHER"], ["discovered", "OTHER"],
+      ["biological", "OTHER"], ["cells", "CONCEPT"], ["in", "OTHER"], ["1665", "DATE"],
+      ["in", "OTHER"], ["London", "LOCATION"], ["using", "OTHER"], ["a", "OTHER"], ["microscope", "CONCEPT"], [".", "OTHER"]
+    ]
+  },
+  {
+    "tokens": [
+      ["Mitochondria", "CONCEPT"], ["generate", "OTHER"], ["adenosine", "CONCEPT"], ["triphosphate", "CONCEPT"],
+      ["(", "OTHER"], ["ATP", "CONCEPT"], [")", "OTHER"], ["through", "OTHER"],
+      ["cellular", "CONCEPT"], ["respiration", "CONCEPT"], [".", "OTHER"]
+    ]
+  },
+  {
+    "tokens": [
+      ["James", "PERSON"], ["Watson", "PERSON"], ["and", "OTHER"], ["Francis", "PERSON"], ["Crick", "PERSON"],
+      ["described", "OTHER"], ["the", "OTHER"], ["double-helix", "CONCEPT"], ["structure", "CONCEPT"],
+      ["of", "OTHER"], ["DNA", "CONCEPT"], ["in", "OTHER"], ["1953", "DATE"], ["at", "OTHER"],
+      ["Cambridge", "LOCATION"], [".", "OTHER"]
+    ]
+  },
+  {
+    "tokens": [
+      ["Albert", "PERSON"], ["Einstein", "PERSON"], ["formulated", "OTHER"], ["the", "OTHER"],
+      ["theory", "CONCEPT"], ["of", "OTHER"], ["general", "CONCEPT"], ["relativity", "CONCEPT"],
+      ["in", "OTHER"], ["1915", "DATE"], ["in", "OTHER"], ["Berlin", "LOCATION"], [",", "OTHER"], ["Germany", "LOCATION"], [".", "OTHER"]
+    ]
+  },
+  {
+    "tokens": [
+      ["Tim", "PERSON"], ["Berners-Lee", "PERSON"], ["invented", "OTHER"], ["the", "OTHER"],
+      ["World", "CONCEPT"], ["Wide", "CONCEPT"], ["Web", "CONCEPT"], ["and", "OTHER"],
+      ["HTTP", "CONCEPT"], ["protocol", "CONCEPT"], ["in", "OTHER"], ["1989", "DATE"],
+      ["at", "OTHER"], ["CERN", "LOCATION"], ["in", "OTHER"], ["Geneva", "LOCATION"], [",", "OTHER"], ["Switzerland", "LOCATION"], [".", "OTHER"]
+    ]
+  },
+  {
+    "tokens": [
+      ["Vint", "PERSON"], ["Cerf", "PERSON"], ["and", "OTHER"], ["Bob", "PERSON"], ["Kahn", "PERSON"],
+      ["designed", "OTHER"], ["the", "OTHER"], ["TCP/IP", "CONCEPT"], ["architecture", "CONCEPT"],
+      ["for", "OTHER"], ["ARPANET", "CONCEPT"], ["in", "OTHER"], ["1974", "DATE"],
+      ["in", "OTHER"], ["the", "OTHER"], ["United", "LOCATION"], ["States", "LOCATION"], [".", "OTHER"]
+    ]
+  }
+]
